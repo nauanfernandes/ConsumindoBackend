@@ -1,0 +1,303 @@
+/* Definindo variáveis para fácil personalização */
+:root {
+  --primary-color: #6a1b9a; /* Roxo principal */
+  --primary-light: #ab47bc; /* Roxo claro */
+  --primary-dark: #4a0072; /* Roxo escuro */
+  --accent-color: #ff7043; /* Coral para destaques */
+  --background-color: #f4f0f7; /* Fundo lilás claro */
+  --navbar-bg: #ffffff; /* Fundo da navbar */
+  --text-color: #222; /* Texto escuro */
+  --section-bg: #ffffff; /* Fundo das seções */
+  --shadow-color: rgba(0, 0, 0, 0.15);
+}
+
+/* Corpo da página */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  height: 100%;
+  display: flex;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin-left: 450px;
+  width: calc(100% - 250px);
+}
+/* Navbar Vertical */
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--navbar-bg);
+  padding: 20px 10px;
+  height: 100vh;
+  width: 200px;
+  box-shadow: 2px 0 5px var(--shadow-color);
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.navbar-options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.navbar button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: var(--text-color);
+  padding: 10px;
+  transition: color 0.3s, font-weight 0.3s;
+  text-align: left;
+  width: 100%;
+}
+
+.navbar button:hover {
+  color: var(--accent-color);
+}
+
+.navbar button.active {
+  font-weight: bold;
+  color: var(--primary-dark);
+  border-left: 4px solid var(--accent-color);
+  padding-left: 16px;
+}
+
+/* Container Centralizado para todas as Abas */
+.container {
+  margin-left: 220px; /* Espaço para a barra de navegação */
+  width: calc(100% - 220px); /* Ajusta a largura para excluir a barra lateral */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Centralização vertical */
+  box-sizing: border-box;
+}
+
+/* Seção de Login, Registro e Produtos */
+.login-section, .register-section, .products-section {
+  background-color: var(--section-bg);
+  box-shadow: 0px 4px 15px var(--shadow-color);
+  border-radius: 12px;
+  padding: 30px;
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+}
+
+.login-section h2, .register-section h2, .products-section h2 {
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.login-section p.error-message, .register-section p.error-message {
+  color: var(--accent-color);
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Campos de Texto */
+.login-section input, .register-section input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--primary-light);
+  background-color: #fafafa;
+  color: var(--text-color);
+  width: 100%;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.login-section input:focus, .register-section input:focus {
+  border-color: var(--primary-dark);
+}
+
+/* Botões */
+.login-button, .register-button, .add-product-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.login-button:hover, .register-button:hover, .add-product-button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* Seção de Produtos */
+.products-section {
+  background-color: var(--section-bg);
+  box-shadow: 0px 4px 12px var(--shadow-color);
+  border-radius: 12px;
+  padding: 25px;
+  width: 100%;
+  max-width: 800px;
+}
+
+/* Botões de Ação na Seção de Produtos */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.button-card {
+  width: 100%;
+  max-width: 200px;
+  background-color: var(--section-bg);
+  box-shadow: 0px 4px 12px var(--shadow-color);
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.button-card:hover {
+  transform: scale(1.05); /* Aumenta o tamanho do cartão ao passar o mouse */
+}
+
+.button-card button {
+  width: 100%;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.button-card button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* Lista de Produtos */
+.product-list {
+  padding: 20px;
+  background-color: var(--section-bg);
+  box-shadow: 0px 4px 12px var(--shadow-color);
+  border-radius: 12px;
+  width: 100%;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  background-color: var(--section-bg);
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px var(--shadow-color);
+  overflow: hidden;
+  transition: transform 0.3s;
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.product-details {
+  padding: 15px;
+}
+
+.product-name {
+  font-size: 18px;
+  color: var(--primary-dark);
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Botões de Ação nos Cartões de Produto */
+.action-button {
+  flex: 1;
+  margin: 0 5px;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.edit-button {
+  background-color: var(--primary-color);
+}
+
+.delete-button {
+  background-color: var(--accent-color);
+}
+
+.delete-button:hover {
+  background-color: #d84315;
+}
+
+/* Botão Voltar */
+.back-button {
+  margin-top: 15px;
+  background-color: var(--primary-light);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.back-button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .navbar {
+    width: 100%;
+    height: auto;
+    position: static;
+    flex-direction: row;
+    justify-content: space-around;
+    box-shadow: 0 2px 4px var(--shadow-color);
+  }
+  
+  .container {
+    margin-left: 0;
+    padding: 20px;
+  }
+  
+  .product-list {
+    margin-left: 0;
+  }
+}
